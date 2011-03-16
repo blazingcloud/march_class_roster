@@ -1,0 +1,13 @@
+<h1>My Class List</h1>
+
+<ul>
+<% @people.each do |person| %>
+<li>
+  <%= render :partial => 'person', :locals => {:person => person} %>
+</li>
+ <% end %>
+</ul>
+
+<br />
+
+<%= link_to 'New Person', new_person_path %>

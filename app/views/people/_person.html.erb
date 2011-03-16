@@ -1,0 +1,6 @@
+<div>
+<%= person.first_name[0,1].to_s + ". " + person.last_name %>
+<%= link_to 'Show', person %>
+<%= link_to 'Edit', edit_person_path(person) %>
+<%= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete %>
+</div>
