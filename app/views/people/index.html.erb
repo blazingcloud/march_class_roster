@@ -1,13 +1,33 @@
 <h1>My Class List</h1>
 
+
+<h2>People in class</h2>
 <ul>
-<% @people.each do |person| %>
+<% Person.all_present.each do |person| %>
 <li>
   <%= render :partial => 'person', :locals => {:person => person} %>
 </li>
- <% end %>
+<% end %>
 </ul>
 
+<hr/>
+<h2>Playing hooky</h2>
+<ul>
+<% Person.all_absent.each do |person| %>
+<li>
+  <%= render :partial => 'person', :locals => {:person => person} %>
+</li>
+<% end %>
+</ul>
+<hr/>
+<h2>Need to check in</h2>
+<ul>
+<% Person.not_checked_in.each do |person| %>
+<li>
+  <%= render :partial => 'person', :locals => {:person => person} %>
+</li>
+<% end %>
+</ul>
 <br />
 
 <%= link_to 'New Person', new_person_path %>
